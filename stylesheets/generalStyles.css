@@ -25,16 +25,23 @@ main {
 	position: relative;
 }
 
+.logo-img {
+	width: 10em;
+	height: 10em;
+	object-fit: contain;
+}
+
 .auth-form {
 	min-width: 320px;
 	max-width: 412px;
-	width: 412px;
-	margin: 100px auto 100px auto;
+	width: 100%;
+	margin: 1em auto 1em auto;
 }
 
 .auth-form h4 {
-	font-weight: 400;
-	color: #222
+	font-weight: 300;
+	color: #222;
+	word-spacing: 0.4em;
 }
 
 .auth-form label,
