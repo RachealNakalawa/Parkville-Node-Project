@@ -13,36 +13,40 @@
     <title>Parkville Signup</title>
   </head>
   <body>
-		<form class="border m-2 p-3 text-secondary auth-form">
+		<main class="d-flex align-items-center justify-content-center">
 
-			<h2 class="text-center mb-5">Create a parkville account</h2>
-
-			<div class="mb-3">
-				<label for="firstName" class="form-label">First Name</label>
-				<input type="text" class="form-control" id="firstName">
-			</div>
-
-			<div class="mb-3">
-				<label for="lastName" class="form-label">Last Name</label>
-				<input type="text" class="form-control" id="lastName">
-			</div>
-
-			<div class="mb-3">
-				<label for="exampleInputEmail1" class="form-label">Email address</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-				<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-			</div>
-			<div class="mb-3">
-				<label for="password" class="form-label">Password</label>
-				<input type="password" class="form-control" id="password">
-			</div>
-
-			<div class="mb-3">
-				<label for="password2" class="form-label">Password Confirmation</label>
-				<input type="password" class="form-control" id="password2">
-			</div>
-
-			<button type="submit" class="btn btn-primary w-100">Submit</button>
-		</form>
+			<form class="border p-3 auth-form mx-3 bg-white my-5">
+	
+				<h4 class="text-center mb-3">Create a parkville account</h4>
+	
+				<div class="mb-3">
+					<label for="firstName" class="form-label">First Name</label>
+					<input type="text" class="form-control" id="firstName">
+				</div>
+	
+				<div class="mb-3">
+					<label for="lastName" class="form-label">Last Name</label>
+					<input type="text" class="form-control" id="lastName">
+				</div>
+	
+				<div class="mb-3">
+					<label for="exampleInputEmail1" class="form-label">Email address</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+				</div>
+				<div class="mb-3">
+					<label for="password" class="form-label">Password</label>
+					<input type="password" class="form-control" id="password">
+				</div>
+	
+				<div class="mb-3">
+					<label for="password2" class="form-label">Password Confirmation</label>
+					<input type="password" class="form-control" id="password2">
+				</div>
+	
+				<button type="submit" class="btn btn-primary w-100">Create an account</button>
+				<p class="text-center mt-3">Already have an account? <a href="#">Login</a></p>
+			</form>
+		</main>
   </body>
 </html>
