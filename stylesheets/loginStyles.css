@@ -1,3 +1,9 @@
 .form-text {
 	font-size: 12px;
 }
+
+p.text-center {
+	position: absolute;
+	top: 0;
+	right: 50px;
+}

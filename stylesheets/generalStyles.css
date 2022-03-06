@@ -9,6 +9,11 @@
 	margin: 0;
 }
 
+.button-primary {
+	background-color: #0077C5;
+	color: white;
+}
+
 h1 {
 	background-color: red;
 }
@@ -17,12 +22,14 @@ main {
 	/* max-height: 100vh; */
 	min-height: 100vh;
 	background-color: #ECEEF1;
+	position: relative;
 }
 
 .auth-form {
 	min-width: 320px;
 	max-width: 412px;
 	width: 412px;
+	margin: 100px auto 100px auto;
 }
 
 .auth-form h4 {
@@ -31,7 +38,7 @@ main {
 }
 
 .auth-form label,
-.auth-form p {
+p.text-center {
 	color: #555;
 	font-weight: 300;
 }
