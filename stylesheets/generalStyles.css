@@ -12,3 +12,30 @@
 h1 {
 	background-color: red;
 }
+
+main {
+	/* max-height: 100vh; */
+	min-height: 100vh;
+	background-color: #ECEEF1;
+}
+
+.auth-form {
+	min-width: 320px;
+	max-width: 412px;
+	width: 412px;
+}
+
+.auth-form h4 {
+	font-weight: 400;
+	color: #222
+}
+
+.auth-form label,
+.auth-form p {
+	color: #555;
+	font-weight: 300;
+}
+
+.auth-form input {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) inset;
+}
