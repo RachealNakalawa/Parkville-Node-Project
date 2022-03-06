@@ -25,6 +25,12 @@ main {
 	position: relative;
 }
 
+.navbar-logo-img {
+	width: 3.5em;
+	height: 3.5em;
+	object-fit: contain;
+}
+
 .logo-img {
 	width: 10em;
 	height: 10em;
