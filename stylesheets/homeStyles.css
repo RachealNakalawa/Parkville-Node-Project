@@ -1,0 +1,39 @@
+.home-section {
+	min-height: 100vh;
+	max-height: 100vh;
+	overflow: hidden;
+	background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../images/parkbackground2.jpg");
+}
+
+.dept-card-div-1 {
+	background: url("../images/car_parking.jpg");
+}
+
+.dept-card-div-2 {
+	background: url("../images/tyres.jpg");
+}
+
+.dept-card-div-3 {
+	background: url("../images/batteries.png"), linear-gradient(white, white);
+}
+
+.home-section,
+.dept-card-div-1,
+.dept-card-div-2,
+.dept-card-div-3 {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.welcome-heading {
+	font-weight: 300;
+}
+
+.dept-div > div {
+	background: linear-gradient(to top, black, transparent);
+}
+
+.dept-div > div > h5 {
+	font-weight: 100;
+}
