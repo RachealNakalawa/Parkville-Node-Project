@@ -30,6 +30,15 @@
 	font-weight: 300;
 }
 
+.dept-div {
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.dept-div:hover {
+	transform: scale(1.03);
+}
+
 .dept-div > div {
 	background: linear-gradient(to top, black, transparent);
 }
