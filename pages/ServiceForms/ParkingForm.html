@@ -21,9 +21,9 @@
   <body>
 
 		<main>
-			<form class="p-3 border mt-3 auth-form bg-light">
+			<form class="p-3 border mt-3 auth-form bg-light" action="/action_page.php" target="_blank" method="POST">
 
-				<h4 class="text-center">Park a car</h4>
+				<h4 class="text-center">Register a Car</h4>
 
 				<div class="mb-3">
 					<input type="text" placeholder="Driver's Name" class="form-control shadow-none" id="driverId" name="driverName" aria-describedby="emailHelp">
@@ -33,11 +33,7 @@
 					<input type="tel" placeholder="Phone Number" class="form-control shadow-none" id="phonenumber" name="telephone" >
 				</div>
 
-				<div class="mb-3">
-					<input type="text" placeholder="NIN" class="form-control shadow-none" id="driverNin" name="driverNin" >
-				</div>
-
-				<select class="form-select mb-3" name="carType" aria-label="Default select example">
+				<select class="form-select mb-3" name="carType" aria-label="Default select example" value="2" onchange="selectChanger(event)">
 					<option selected>Select car type</option>
 					<option value="1">Truck</option>
 					<option value="2">Personal Cars</option>
@@ -45,6 +41,10 @@
 					<option value="4">Costas</option>
 					<option value="5">Boda bodas</option>
 				</select>
+
+				<div class="mb-3 driverNin" style="display: none">
+					<input type="text" placeholder="NIN" class="form-control shadow-none" id="driverNin" name="driverNin" >
+				</div>
 
 				
 					<div class="mb-3 ">
@@ -73,6 +73,8 @@
 
 				<button type="submit" class="btn btn-primary w-100">Save</button>
 				<button type="button" class="btn btn-danger w-100 my-3">Cancel</button>
+
+				<label class="error my=4">Error, something is wrong</label>
 			</form>
 		</main>
 
@@ -81,5 +83,26 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
+
+ 
+		<script>
+
+			let ninput = document.querySelector("div.driverNin");
+			let selectChanger = (e) => {
+				if (e.target.value == "5") {
+					console.log("Ihave reached here");
+					ninput.style.display = "block";
+				} 
+				else{
+					ninput.style.display = "none";
+				}
+
+				console.log(e.target.value);
+			}
+		</script>
+
+
+	
   </body>
 </html>
