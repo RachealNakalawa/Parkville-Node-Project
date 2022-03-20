@@ -33,7 +33,7 @@
 					<input type="tel" placeholder="Phone Number" class="form-control shadow-none" id="phonenumber" name="telephone" >
 				</div>
 
-				<select class="form-select mb-3" name="carType" aria-label="Default select example" value="2" onchange="selectChanger(event)">
+				<select class="form-select mb-3" name="carType" aria-label="Default select example" value="2" onchange="selectChanger()">
 					<option selected>Select car type</option>
 					<option value="1">Truck</option>
 					<option value="2">Personal Cars</option>
@@ -89,8 +89,9 @@
 		<script>
 
 			let ninput = document.querySelector("div.driverNin");
-			let selectChanger = (e) => {
-				if (e.target.value == "5") {
+			let selectChanger = () => {
+				let selElement = document.querySelector('select');
+				if (selElement.value == "5") {
 					console.log("Ihave reached here");
 					ninput.style.display = "block";
 				} 
@@ -98,8 +99,10 @@
 					ninput.style.display = "none";
 				}
 
-				console.log(e.target.value);
+				console.log(selElement.value);
 			}
+
+			selectChanger();
 		</script>
 
 
