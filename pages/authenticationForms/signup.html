@@ -32,36 +32,37 @@
 			</nav>
 
 
-			<form class="border p-3 auth-form mx-3 bg-white" name="signup">
+			<form class="border p-3 auth-form mx-3 bg-white" action="/signup" target="" method="POST" name="signup">
 	
-				<h4 class="text-center my-3">Parkville Signup</h4>
+				<h4 class="text-center mt-3 mb-1">Parkville Signup</h4>
+				<span class="text-center d-block form-text mb-3">(<small class="text-danger">*</small>) means field is required</span>
 	
 				<div class="mb-3">
-					<label for="firstName" class="form-label">First Name</label>
-					<input type="text" class="form-control" id="firstName" name="firstName">
+					<label for="firstName" class="form-label required">First Name</label>
+					<input type="text" class="form-control" id="firstname" name="firstName">
 					<label for="firstName" class="text-danger form-text error-label fn-error">I will carry the error for first name</label>
 				</div>
 	
 				<div class="mb-3" name="lastNameDiv">
-					<label for="lastName" class="form-label">Last Name</label>
-					<input type="text" class="form-control" id="lastName" name="LastName">
+					<label for="lastName" class="form-label required">Last Name</label>
+					<input type="text" class="form-control" id="lastname" name="LastName">
 					<label class="text-danger form-text error-label ln-error">I will carry the error for last name</label>
 				</div>
 	
 				<div class="mb-3">
-					<label for="exampleInputEmail1" class="form-label">Email address</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" name="email1" aria-describedby="emailHelp">
+					<label for="exampleInputEmail1" class="form-label required">Email address</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
 					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				</div>
 				<div class="mb-3">
-					<label for="password" class="form-label">Password</label>
-					<input type="password" class="form-control" id="password" name="passwordName">
+					<label for="password" class="form-label required">Password</label>
+					<input type="password" class="form-control" id="password" name="password">
 					<label class="text-danger form-text error-label pswd-error">I will carry the error for password</label>
 				</div>
 	
 				<div class="mb-3">
-					<label for="password2" class="form-label">Password Confirmation</label>
-					<input type="password" class="form-control" id="password2" name="passwordCon">
+					<label for="password2" class="form-label required">Password Confirmation</label>
+					<input type="password" class="form-control" id="password2" name="passwordconfirm">
 					<label class="text-danger form-text error-label pswdConfirm-error">I will carry the error for PasswordConfiramtion</label>
 				</div>
 	
