@@ -1,23 +1,40 @@
-document.signup.firstName.focus();
+document.signup.firstname.focus();
 
 const emailAffirmation = "We'll never share your email with anyone else."
+// const compName = /^[a-zA-Z]{3,20}$/;
+const compName = /^[A-Z][a-z]{2,20}$/;
+
+// Function to determin error message
+const errorMessageProducer = (value, secondErrorMessage) => {
+	let errorMessage = ""
+	if (value == "") {
+		errorMessage = "Field should not be empty"
+	}else{
+		errorMessage = secondErrorMessage;
+	}
+	return errorMessage;
+}
+
 
 
 // ---- Validation Functions begin here -----
 
 // validate First name
 const validateFirstName = () => {
-  let fname = document.signup.firstName;
-  let comp = /^[a-zA-Z]+$/;
+  let fname = document.signup.firstname;
   let errorLabel = document.querySelector(".fn-error");
 
-  if (!(fname.value.match(comp))) {
-    errorLabel.innerHTML = "Invalid First Name";
+  if (!(fname.value.match(compName))) {
+    errorLabel.innerHTML = errorMessageProducer(fname.value, "First name should start with a capital letter and should be between 3 to 20 letters");
     errorLabel.style.display = "block";
+		fname.style.borderColor = "red"
+		fname.classList.add("shadow-none");
 		fname.focus();
     return false;
   }
-  document.signup.lastName.focus();
+	fname.classList.remove("shadow-none");
+	fname.style.borderColor = "lightgray"
+  document.signup.lastname.focus();
   errorLabel.style.display = "none";
 	return true;
 };
@@ -25,17 +42,20 @@ const validateFirstName = () => {
 
 // // validate Last name
 const validateLastName = () => {
-  let lname = document.signup.lastName;
-  let comp = /^[a-zA-Z]+$/;
+  let lname = document.signup.lastname;
   let errorLabel = document.querySelector(".ln-error");
 
-  if (!lname.value.match(comp)) {
-    errorLabel.innerHTML = "Invalid Last Name";
+  if (!lname.value.match(compName)) {
+    errorLabel.innerHTML = errorMessageProducer(lname.value, "Second name should start with a capital letter and should be between 3 to 20 letters");
     errorLabel.style.display = "block";
+		lname.style.borderColor = "red"
+		lname.classList.add("shadow-none");
 		lname.focus();
     return false;
   }
-  document.signup.email1.focus();
+	lname.classList.remove("shadow-none");
+	lname.style.borderColor = "lightgray"
+  document.signup.email.focus();
   errorLabel.style.display = "none";
 	return true;
 };
@@ -43,17 +63,22 @@ const validateLastName = () => {
 
 // validate Email
 const validateEmail = () => {
-  let eml = document.signup.email1;
+  let eml = document.signup.email;
 	let comp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
   let divLabel = document.querySelector("#emailHelp");
 
   if (!(eml.value.match(comp))) {
-    divLabel.innerHTML = "Invalid Email";
+    divLabel.innerHTML = errorMessageProducer(eml.value, "Please provide a valid email");
 		divLabel.style.color = "red";
+		eml.style.borderColor = "red"
+		eml.classList.add("shadow-none");
 		eml.focus();
     return false;
   }
-  document.signup.passwordName.focus();
+
+	eml.classList.remove("shadow-none");
+	eml.style.borderColor = "lightgray"
+  document.signup.password.focus();
   divLabel.innerHTML = emailAffirmation;
 	divLabel.style.color = "gray";
 	return true;
@@ -62,32 +87,41 @@ const validateEmail = () => {
 // validate Password
 
 const validatePassword = () => {
-  let pswd = document.signup.passwordName;
+  let pswd = document.signup.password;
   let comp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
   let errorLabel = document.querySelector(".pswd-error");
 
   if (!pswd.value.match(comp)) {
-    errorLabel.innerHTML = "Minimum eight and maximum 10 characters, at least one uppercase letter, one lowercase letter, one number and one special character";
+    errorLabel.innerHTML = errorMessageProducer(pswd.value, "Minimum eight and maximum 10 characters, at least one uppercase letter, one lowercase letter, one number and one special character");
     errorLabel.style.display = "block";
+		pswd.style.borderColor = "red";
+		pswd.classList.add("shadow-none");
 		pswd.focus();
     return false;
   }
-  document.signup.passwordCon.focus();
+
+	pswd.classList.remove("shadow-none");
+	pswd.style.borderColor = "lightgray"
+  document.signup.passwordconfirm.focus();
   errorLabel.style.display = "none";
 	return pswd.value;
 };
 
-const validatePasswordConfiramtion = (a) => {
-	let pswdConfirm = document.signup.passwordCon;
+const validatePasswordConfirmation = (a) => {
+	let pswdConfirm = document.signup.passwordconfirm;
 	let errorLabel = document.querySelector('.pswdConfirm-error');
 
 	if (pswdConfirm.value !== a) {
 		errorLabel.innerHTML = "Password Confirmation should match Password"
 		errorLabel.style.display = "block";
+		pswdConfirm.style.borderColor = "red";
+		pswdConfirm.classList.add("shadow-none");
 		pswdConfirm.focus();
 		return false;
 	}
 
+	pswdConfirm.classList.remove("shadow-none");
+	pswdConfirm.style.borderColor = "lightgray"
 	pswdConfirm.blur();
 	errorLabel.style.display= 'none';
 	return true;
@@ -122,10 +156,9 @@ let handleButtonClick = (e) => {
 		capturePassword = validatePassword();
 	}
 
-	if (validatePasswordConfiramtion(capturePassword) == false) {
+	if (validatePasswordConfirmation(capturePassword) == false) {
 		e.preventDefault();
 		return;
 	}
 	console.log("I have come after validation");
-
 }
