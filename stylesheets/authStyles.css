@@ -3,6 +3,11 @@
 	color: white;
 }
 
+.button-danger {
+	background-color: #bc2739;
+	color: white;
+}
+
 main {
 	min-height: 100vh;
 	background-color: #ECEEF1;
