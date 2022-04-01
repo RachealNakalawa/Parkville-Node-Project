@@ -26,19 +26,37 @@
 				<h4 class="text-center">Hire a Battery</h4>
 
 				<div class="mb-3">
-					<input type="text" placeholder="Hirer's Name" class="form-control" id="hirerId" name="hirername" aria-describedby="emailHelp">
+					<input type="text" placeholder="Hirer's Name" class="form-control" id="hirerid" name="hirername" aria-describedby="emailHelp">
 				</div>
 
 				<div class="mb-3">
-					<input type="tel" placeholder="Phone Number" class="form-control" id="phonenumber" name="telephone" >
+					<input type="tel" placeholder="Hirer's Phone Number" class="form-control" id="phonenumber" name="telephone" >
 				</div>
 
-				<select class="form-select mb-3" name="batterysize" aria-label="Default select example" value="2">
+				<div class="mb-3 " >
+					<input type="text" placeholder="Hirer's NIN Number" class="form-control" id="hirernin" name="hirernin" >
+				</div>
+
+				<h6>Hirer's Gender</h6>
+				<div class="form-check ">
+					<input class="form-check-input" type="radio" name="genderoption" value="" id="male">
+					<label class="form-check-label" for="male">
+						Male
+					</label>
+				</div>
+				<div class="form-check mb-3">
+					<input class="form-check-input" type="radio" name="genderoption" value="" id="female">
+					<label class="form-check-label" for="female">
+						Female
+					</label>
+				</div>
+
+				<select class="form-select mb-3" name="batterysize" aria-label="Default select example">
 					<option selected>Select Battery Size</option>
-					<option value="1">Size 1 (180,000 UGX @)</option>
-					<option value="2">Size 2 (220,000 UGX @)</option>
-					<option value="3">Size 3 (260,000 UGX @)</option>
-					<option value="4">Size 4 (300,000 UGX @)</option>
+					<option value="size1">Size 1 (180,000 UGX @)</option>
+					<option value="size2">Size 2 (220,000 UGX @)</option>
+					<option value="size3">Size 3 (260,000 UGX @)</option>
+					<option value="size4">Size 4 (300,000 UGX @)</option>
 				</select>
 
 				<div class="mb-3">
@@ -49,14 +67,26 @@
 					<input class="form-control" placeholder="Total hire cost" required type="number" name="totalcost">
 				</div>
 
-				<div class="mb-3 " >
-					<input type="text" placeholder="NIN" class="form-control" id="hirerNin" name="hirernin" >
+				<div class="mb-3 d-flex align-items-center ">
+					<label for="hiretime" class="form-label me-4">Hire date</label>
+					<input type="time" placeholder="Hire Time" name="hiretime"  class="form-control shadow-none w-50" id="hiretime" >
 				</div>
 
+
 				<div class="mb-3 d-flex align-items-center ">
-					<label for="hireDate" class="form-label me-4">Hire date</label>
-					<input type="date" placeholder="Hire Date" name="hiredate" value="#e66465" class="form-control shadow-none w-50" id="hireDate" >
+					<label for="hiredate" class="form-label me-4">Hire date</label>
+					<input type="date" placeholder="Hire Date" name="hiredate"  class="form-control shadow-none w-50" id="hiredate" >
 				</div>
+
+				<div class="mb-3">
+					<input type="text" placeholder="ReceiptNumber" class="form-control shadow-none" id="receiptnumber" name="receiptnumber" >
+				</div>
+
+				<select class="form-select mb-3" name="receiptstatus" aria-label="Default select example">
+					<option selected>Select Receipt status</option>
+					<option value="Open">Open/Hired</option>
+					<option value="Closed">Closed/Returned</option>
+				</select>
 				
 
 

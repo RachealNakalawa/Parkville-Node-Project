@@ -21,56 +21,67 @@
   <body>
 
 		<main class="d-flex align-items-center justify-content-center">
-			<form class="p-3 border mt-3 auth-form bg-light" action="/battery" target="" method="POST" name="battery">
+			<form class="p-3 border mt-3 auth-form bg-light" action="/tyres" target="" method="POST" name="tyres">
 
 				<h4 class="text-center">Car Tyre Clinic</h4>
 
 				<fieldset class="mb-3 border-bottom border-dark pb-3">
 					<legend>Purchase</legend>
-					<select class="form-select mb-3" name="batterysize" aria-label="Default select example" value="2">
+					<select class="form-select mb-3" name="batterysize" aria-label="Default select example">
 						<option selected>Select Tyre Make</option>
-						<option value="1">Pirelli</option>
-						<option value="2">Michellin</option>
-						<option value="3">Good Year</option>
+						<option value="pirelli">Pirelli</option>
+						<option value="michellin">Michellin</option>
+						<option value="goodYear">Good Year</option>
 					</select>
 
-					<select class="form-select mb-3" name="batterysize" aria-label="Default select example" value="2">
+					<select class="form-select mb-3" name="batterysize" aria-label="Default select example">
 						<option selected>Select Tyre Size</option>
-						<option value="1">Size 1</option>
-						<option value="2">Size 2</option>
-						<option value="3">Size 3</option>
+						<option value="size1">Size 1</option>
+						<option value="size2">Size 2</option>
+						<option value="size3">Size 3</option>
 					</select>
 
-					<select class="form-select mb-3" name="batterysize" aria-label="Default select example" value="2">
+					<select class="form-select mb-3" name="batterysize" aria-label="Default select example">
 						<option selected>Select Car Model</option>
-						<option value="1">Subaru</option>
-						<option value="2">Toyota</option>
-						<option value="3">Nissan</option>
+						<option value="subaru">Subaru</option>
+						<option value="toyota">Toyota</option>
+						<option value="nissan">Nissan</option>
+					</select>
+
+					<select class="form-select mb-3" name="batteryprice" aria-label="Default select example">
+						<option selected>Price</option>
+						<option value="180000">180,000 UGX</option>
+						<option value="220000">220,000 UGX</option>
+						<option value="250000">250,000 UGX</option>
 					</select>
 	
 					<div class="mb-3 d-flex align-items-center ">
-						<label for="purchaseDate" class="form-label me-4">Purchase date</label>
-						<input type="date" placeholder="Purchase Date" name="purchasedate" value="#e66465" class="form-control shadow-none w-50" id="purchaseDate" >
+						<label for="purchasedate" class="form-label me-4">Purchase date</label>
+						<input type="date" placeholder="Purchase Date" name="purchasedate" class="form-control shadow-none w-50" id="purchasedate" >
 					</div>
 				</fieldset>
 
 
 				<fieldset class="mb-3 car-service-fieldset">
 					<legend>Services</legend>
-					<select class="form-select mb-3" name="batterysize" aria-label="Default select example" value="2">
-						<option selected>Select Tyre Service</option>
-						<option value="1">Tyre Pressure (500 UGX @tyre)</option>
-						<option value="2">Valves (5000 UGX @tyre)</option>
-						<option value="3">Puncture Fixing (5000 UGX @tyre)</option>
+					<select class="form-select mb-3 tyreservice-select" name="tyreservice" aria-label="Default select example">
+						<option selected value="0">Select Tyre Service</option>
+						<option value="500">Tyre Pressure (500 UGX @tyre)</option>
+						<option value="5000">Valves (5000 UGX @tyre)</option>
+						<option value="5000">Puncture Fixing (5000 UGX @tyre)</option>
 					</select>
 	
 					<div class="mb-3">
-						<input class="form-control" placeholder="Number of Tyres" required type="number" name="numberoftyres">
+						<input class="form-control numberoftyres-input" placeholder="Number of Tyres" required type="number" name="numberoftyres">
 					</div>
 
+					<div class="mb-3 d-none">
+						<input class="form-control" placeholder="" required type="number" name="tyreservicecost">
+					</div>					
+
 					<div class="mb-3 d-flex align-items-center ">
-						<label for="purchaseDate" class="form-label me-4">Service date</label>
-						<input type="date" placeholder="Purchase Date" name="purchasedate" value="#e66465" class="form-control shadow-none w-50" id="purchaseDate" >
+						<label for="purchasedate" class="form-label me-4">Service date</label>
+						<input type="date" placeholder="Purchase Date" name="purchasedate"  class="form-control shadow-none w-50" id="purchasedate" >
 					</div>
 				</fieldset>
 				
@@ -86,6 +97,5 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-	
   </body>
 </html>
