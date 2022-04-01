@@ -1,10 +1,9 @@
 document.signup.firstname.focus();
 
 const emailAffirmation = "We'll never share your email with anyone else."
-// const compName = /^[a-zA-Z]{3,20}$/;
-const compName = /^[A-Z][a-z]{2,20}$/;
+const compName = /^[A-Z][a-z]{1,20}$/;
 
-// Function to determin error message
+// Function to determine error message
 const errorMessageProducer = (value, secondErrorMessage) => {
 	let errorMessage = ""
 	if (value == "") {
@@ -25,13 +24,14 @@ const validateFirstName = () => {
   let errorLabel = document.querySelector(".fn-error");
 
   if (!(fname.value.match(compName))) {
-    errorLabel.innerHTML = errorMessageProducer(fname.value, "First name should start with a capital letter and should be between 3 to 20 letters");
+    errorLabel.innerHTML = errorMessageProducer(fname.value, "First name should start with a capital letter and should be between 2 to 20 letters");
     errorLabel.style.display = "block";
 		fname.style.borderColor = "red"
 		fname.classList.add("shadow-none");
 		fname.focus();
     return false;
   }
+
 	fname.classList.remove("shadow-none");
 	fname.style.borderColor = "lightgray"
   document.signup.lastname.focus();
@@ -46,7 +46,7 @@ const validateLastName = () => {
   let errorLabel = document.querySelector(".ln-error");
 
   if (!lname.value.match(compName)) {
-    errorLabel.innerHTML = errorMessageProducer(lname.value, "Second name should start with a capital letter and should be between 3 to 20 letters");
+    errorLabel.innerHTML = errorMessageProducer(lname.value, "Second name should start with a capital letter and should be between 2 to 20 letters");
     errorLabel.style.display = "block";
 		lname.style.borderColor = "red"
 		lname.classList.add("shadow-none");
@@ -107,6 +107,8 @@ const validatePassword = () => {
 	return pswd.value;
 };
 
+// validate Password Confirmation
+
 const validatePasswordConfirmation = (a) => {
 	let pswdConfirm = document.signup.passwordconfirm;
 	let errorLabel = document.querySelector('.pswdConfirm-error');
@@ -134,7 +136,7 @@ let handleButtonClick = (e) => {
 	let capturePassword = "";
 
 	if (validateFirstName() == false) {
-		//this prevent default here prevents the type submit button from doing its default action of submitting a form had i gotten out of this function(handleButtonClick on onclick) when I find an error during validation
+		//this prevent default here prevents the type submit button from doing its default action of submitting a form if i happen to get out of this function(handleButtonClick on onclick) when I find an error during validation
 		e.preventDefault();
 		return
 	}
