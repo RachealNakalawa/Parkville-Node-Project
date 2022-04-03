@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../stylesheets/generalStyles.css" />
+		<link rel="stylesheet" href="../stylesheets/homeStyles.css" />
+
+    <title>Parkville Home</title>
+  </head>
+  <body>
+    <section class="home-section d-flex">
+      <aside
+        class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark"
+        style="width: 250px"
+      >
+        <a
+          href="../pages/Home.html"
+          class="d-flex align-items-center mb-3 mb-md-0 mx-auto text-white text-decoration-none bg-dark"
+        >
+          <span class="fs-4">Parkville</span>
+        </a>
+        <hr />
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a
+              href="../pages/Home.html"
+              class="nav-link active"
+              aria-current="page"
+            >
+              <i class="fa fa-home"></i><span class="ms-2">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <i class="fa fa-info-circle"></i><span class="ms-2">About</span>
+            </a>
+          </li>
+          <li>
+            <div class="dropdown nav-link">
+              <a
+                href="#"
+                class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                id="dropdownUser1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa fa-puzzle-piece"></i>
+                <span class="ms-2">Departments</span>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-dark text-small shadow"
+                aria-labelledby="dropdownUser1"
+              >
+                <li>
+                  <a class="dropdown-item" href="./ParkingHome.html">Parking</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Tyre Clinic</a></li>
+                <li><a class="dropdown-item" href="#">Battery</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <i class="fa fa-cog"></i><span class="ms-2">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <span class="ms-2">Logout</span>
+            </a>
+          </li>
+        </ul>
+
+        <hr />
+        <div class="dropdown">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            id="dropdownUser1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="me-2 text-primary">Welcome</span>
+            <strong> Racheal </strong>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-dark text-small shadow"
+            aria-labelledby="dropdownUser1"
+          >
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="w-100 dashboard-main">
+        <!-- parking department nav bar -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Parking Department</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item border-end border-secondary px-2">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="./ServiceForms/ParkingForm.html"
+                    >Register a car</a
+                  >
+                </li>
+                <li class="nav-item px-2">
+                  <a class="nav-link" href="#">Sign off a car</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!--section to hold the parking tables-->
+
+        <section class="parking-table-section px-5 py-3 d-flex flex-column align-items-center justify-content-between">
+          <div class="parked-cars-div w-100 d-flex flex-column">
+            <h3>Parked Cars</h3>
+						<div class="px-2">
+							<table class="table table-striped table-hover">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">First</th>
+										<th scope="col">Last</th>
+										<th scope="col">Handle</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>Mark</td>
+										<td>Otto</td>
+										<td>@mdo</td>
+									</tr>
+									<!-- <tr>
+										<th scope="row">2</th>
+										<td>Jacob</td>
+										<td>Thornton</td>
+										<td>@fat</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td colspan="2">Larry the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">1</th>
+										<td>Mark</td>
+										<td>Otto</td>
+										<td>@mdo</td>
+									</tr>
+									<tr>
+										<th scope="row">1</th>
+										<td>Mark</td>
+										<td>Otto</td>
+										<td>@mdo</td>
+									</tr> -->
+								</tbody>
+							</table>
+						</div>
+          </div>
+
+          <div class="signedoff-cars-div w-100 d-flex flex-column">
+            <h3>Signed off Cars</h3>
+						<div class="px-2">
+							<table class="table table-striped table-hover">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">First</th>
+										<th scope="col">Last</th>
+										<th scope="col">Handle</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>Mark</td>
+										<td>Otto</td>
+										<td>@mdo</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>Jacob</td>
+										<td>Thornton</td>
+										<td>@fat</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td colspan="2">Larry the Bird</td>
+										<td>@twitter</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+          </div>
+        </section>
+
+        <div class="revenue-div px-3">
+          <h6>Day's Revenue</h6>
+          <p>400,000 UGX</p>
+
+					<small>* Revenue is generated when cars are signed off</small>
+        </div>
+      </main>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/ad0c4e912f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
