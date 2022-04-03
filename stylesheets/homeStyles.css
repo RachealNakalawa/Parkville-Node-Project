@@ -1,7 +1,11 @@
-.home-section {
+.home-section,
+.dashboard-main {
 	min-height: 100vh;
 	max-height: 100vh;
 	overflow: hidden;
+}
+
+.home-section {
 	background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../images/parkbackground2.jpg");
 }
 
@@ -45,4 +49,22 @@
 
 .dept-div > div > h5 {
 	font-weight: 100;
+}
+
+.parking-table-section {
+	min-height: 70vh;
+	max-height: 70vh;
+}
+
+.parked-cars-div,
+.signedoff-cars-div {
+	max-height: 30vh;
+	overflow: auto;
+	position: relative;
+	box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.5);
+}
+
+.parked-cars-div > div,
+.signedoff-cars-div > div {
+	overflow: auto;
 }
