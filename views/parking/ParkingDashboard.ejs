@@ -43,15 +43,17 @@
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item border-end border-secondary px-2">
                   <span
-                    onclick="popup('parking-form-section')"
+                    onclick="popup('parking-form-section', 'register')"
                     class="nav-link"
                     aria-current="page"
                     >Register a car</span
                   >
                 </li>
                 <li class="nav-item px-2">
-                  <a class="nav-link" href="./ServiceForms/signoff.html"
-                    >Sign off a car</a
+                  <span
+                    class="nav-link"
+                    onclick="popup('signoff-form-section', 'signoff')"
+                    >Sign off a car</span
                   >
                 </li>
               </ul>
@@ -155,7 +157,8 @@
         </div>
       </main>
 
-      <%- include("../partials/ParkingForm.ejs") %>
+      <%- include("../partials/ParkingForm.ejs") %> <%-
+      include("../partials/signoff.ejs") %>
     </section>
 
     <script src="../../javascript/parkingPrice.js"></script>
@@ -187,14 +190,15 @@
 
       selectChanger();
 
-      let popup = (className, status = true) => {
+      let popup = (className, formName, status = true) => {
         let popupElement = document.querySelector("." + className);
 
-				if (status) {
-					popupElement.style.display = "flex";	
-				}else {
-					popupElement.style.display = "none";
-				}
+        if (status) {
+          popupElement.style.display = "flex";
+        } else {
+          popupElement.style.display = "none";
+          document[formName].reset();
+        }
       };
     </script>
   </body>
