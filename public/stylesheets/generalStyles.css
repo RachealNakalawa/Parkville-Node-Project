@@ -9,6 +9,10 @@
 	margin: 0;
 }
 
+body {
+	position: relative;
+}
+
 legend {
 	font-weight: 200;
 	font-size: 20px;
@@ -17,4 +21,21 @@ legend {
 .parking-table-section h3 {
 	font-weight: 300;
 	font-size: 20px;
+}
+
+.parking-form-section {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.parking-form-section > form {
+	max-height: 80vh;
+	min-height: 80vh;
+	overflow: auto;
 }
