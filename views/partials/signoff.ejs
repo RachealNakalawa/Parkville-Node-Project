@@ -1,0 +1,109 @@
+<section class="align-items-center justify-content-center signoff-form-section">
+	<div class="form-div">
+
+		<form
+			class="p-3 border mt-0 auth-form bg-light"
+			action=""
+			method=""
+			name="signoff"
+		>
+			<h4 class="text-center">Sign off a Car</h4>
+	
+			<fieldset class="mb-3 border-dark pt-3">
+				<legend>On signing off</legend>
+	
+				<div class="mb-3">
+					<input
+						type="text"
+						placeholder="Taker's Name"
+						class="form-control shadow-none"
+						id="takername"
+						name="takername"
+						aria-describedby="emailHelp"
+					/>
+				</div>
+	
+				<div class="mb-3">
+					<input
+						type="text"
+						placeholder="ReceiptNumber"
+						class="form-control shadow-none"
+						id="receiptnumber"
+						name="receiptnumber"
+					/>
+				</div>
+	
+				<div class="mb-3">
+					<input
+						type="tel"
+						placeholder="Taker's PhoneNumber"
+						class="form-control shadow-none"
+						id="takerphonenumber"
+						name="takertelephone"
+					/>
+				</div>
+	
+				<div class="mb-3 d-flex align-items-center">
+					<label for="signofftime" class="form-label me-4"
+						>Time of Sign off</label
+					>
+					<input
+						type="time"
+						placeholder="Time of sign off"
+						name="signofftime"
+						class="form-control shadow-none w-50"
+						id="signofftime"
+					/>
+				</div>
+	
+				<div class="mb-3 d-flex align-items-center">
+					<label for="signoffDate" class="form-label me-4"
+						>Date of Sign off</label
+					>
+					<input
+						type="date"
+						placeholder="Time of sign off"
+						name="signoffdate"
+						class="form-control shadow-none w-50"
+						id="signoffdate"
+					/>
+				</div>
+	
+				<h6>Taker's Gender</h6>
+				<div class="form-check">
+					<input
+						class="form-check-input"
+						type="radio"
+						name="genderoption"
+						value=""
+						id="male"
+					/>
+					<label class="form-check-label" for="male"> Male </label>
+				</div>
+				<div class="form-check mb-3">
+					<input
+						class="form-check-input"
+						type="radio"
+						name="genderoption"
+						value=""
+						id="female"
+					/>
+					<label class="form-check-label" for="female"> Female </label>
+				</div>
+	
+				<div class="mb-3">
+					<input
+						type="text"
+						placeholder="Taker NIN"
+						class="form-control shadow-none"
+						id="takernin"
+						name="takernin"
+					/>
+				</div>
+			</fieldset>
+	
+			<button type="submit" class="btn button-primary w-100">Submit</button>
+		</form>
+		<button type="button" class="btn my-3 btn-light cancel-button" onclick="popup('signoff-form-section', 'signoff', false)">Cancel</button>
+	</div>
+</section>

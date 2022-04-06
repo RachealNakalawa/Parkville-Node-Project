@@ -23,7 +23,8 @@ legend {
 	font-size: 20px;
 }
 
-.parking-form-section {
+.parking-form-section,
+.signoff-form-section {
 	display: none;
 	position: absolute;
 	top: 0;
@@ -34,8 +35,26 @@ legend {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.parking-form-section > form {
+.form-div,
+.form-div > form {
 	max-height: 80vh;
 	min-height: 80vh;
+}
+
+.form-div {
+	min-width: 320px;
+	max-width: 412px;
+	background-color: red;
+	width: 100%;
+	position: relative;
+}
+
+.form-div > form {
 	overflow: auto;
+}
+
+.cancel-button {
+	position: absolute;
+	top: -10%;
+	left: 105%;
 }
