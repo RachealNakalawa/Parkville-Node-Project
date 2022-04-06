@@ -30,7 +30,8 @@ app.get("/login", (req, res) => {
 })
 
 app.get("/signup", (req, res) => {
-	res.render('authenticationForms/signup');
+	//just to prove that you are simply calling a file
+	res.render('authenticationForms/signup.ejs');
 })
 
 app.get('/home', (req, res) => {
@@ -38,7 +39,7 @@ app.get('/home', (req, res) => {
 })
 
 app.get('/parkings', (req, res)=> {
-	res.render('parking/ParkingHome')
+	res.render('parking/ParkingDashboard')
 })
 
 
