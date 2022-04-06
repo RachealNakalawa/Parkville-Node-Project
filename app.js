@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const expressLayouts = require('express-layout');
 
 //instantiating
 const app = express();
@@ -11,11 +12,13 @@ const portNumber = 3000
 //setting the view engine
 app.set('view engine', 'ejs');
 app.set("views", path.join(__dirname, "/views"));
+app.set("layouts", path.join(__dirname, "/views/layouts"));
+
 
 //setting directory for static files
 app.use(express.static(path.join(__dirname, "public")));
 app.use(morgan('dev'));
-
+app.use(expressLayouts());
 
 //middleware
 
