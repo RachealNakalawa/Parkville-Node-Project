@@ -2,7 +2,7 @@
   <div class="form-div">
     <form
       class="p-3 mt-0 auth-form bg-light"
-      action="/register"
+      action="/parkings"
       target=""
       method="POST"
       name="register"
@@ -125,7 +125,7 @@
           class="form-check-input"
           type="radio"
           name="parkingoption"
-          value=""
+          value="day"
           id="day"
         />
         <label class="form-check-label" for="day"> Day </label>
@@ -135,7 +135,7 @@
           class="form-check-input"
           type="radio"
           name="parkingoption"
-          value=""
+          value="night"
           id="night"
         />
         <label class="form-check-label" for="night"> Night </label>
@@ -145,7 +145,7 @@
           class="form-check-input"
           type="radio"
           name="parkingoption"
-          value=""
+          value="lessthanthree"
           id="lessthanthree"
         />
         <label class="form-check-label" for="lessthanthree">
@@ -164,7 +164,6 @@
           aria-describedby="help"
           value="0"
           readonly
-          disabled
         />
       </div>
 
