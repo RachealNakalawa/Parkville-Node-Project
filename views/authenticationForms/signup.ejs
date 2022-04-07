@@ -1,57 +1,119 @@
+<main
+  class="d-flex align-items-center justify-content-start flex-column auth-main"
+>
+  <nav class="navbar navbar-expand-lg navbar-light w-100 ps-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          class="navbar-logo-img"
+          src="/images/parkville-logo1.png"
+          alt="parkville logo"
+          class="d-inline-block align-text-top"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-		<main class="d-flex align-items-center justify-content-start flex-column auth-main">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <p class="text-center mt-3 ms-auto">
+          Already have an account?
+          <a href="/login"
+            ><button type="button" class="btn button-primary btn-sm ms-2">
+              Login
+            </button></a
+          >
+        </p>
+      </div>
+    </div>
+  </nav>
 
-			<nav class="navbar navbar-expand-lg navbar-light w-100 ps-3">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="#">
-						<img class="navbar-logo-img" src="/images/parkville-logo1.png" alt="parkville logo" class="d-inline-block align-text-top">
-					</a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
+  <form
+    class="border p-3 auth-form mx-3 bg-white"
+    action="/signup"
+    target=""
+    method="POST"
+    name="signup"
+  >
+    <h4 class="text-center mt-3 mb-1">Parkville Signup</h4>
+    <span class="text-center d-block form-text mb-3"
+      >(<small class="text-danger">*</small>) means field is required</span
+    >
 
+    <div class="mb-3">
+      <label for="firstname" class="form-label required">First Name</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" />
+      <label class="text-danger form-text error-label fn-error"
+        >I will carry the error for first name</label
+      >
+    </div>
 
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<p class="text-center mt-3 ms-auto">Already have an account? <a href="/login"><button type="button" class="btn button-primary btn-sm ms-2">Login</button></a></p>
-					</div>
-				</div>
-			</nav>
+    <div class="mb-3" name="lastNameDiv">
+      <label for="lastname" class="form-label required">Last Name</label>
+      <input type="text" class="form-control" id="lastname" name="lastname" />
+      <label class="text-danger form-text error-label ln-error"
+        >I will carry the error for last name</label
+      >
+    </div>
 
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label required"
+        >Email address</label
+      >
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        name="email"
+        aria-describedby="emailHelp"
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label required">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+      />
+      <label class="text-danger form-text error-label pswd-error"
+        >I will carry the error for password</label
+      >
+    </div>
 
-			<form class="border p-3 auth-form mx-3 bg-white" action="/signup" target="" method="POST" name="signup">
-	
-				<h4 class="text-center mt-3 mb-1">Parkville Signup</h4>
-				<span class="text-center d-block form-text mb-3">(<small class="text-danger">*</small>) means field is required</span>
-	
-				<div class="mb-3">
-					<label for="firstname" class="form-label required">First Name</label>
-					<input type="text" class="form-control" id="firstname" name="firstname">
-					<label class="text-danger form-text error-label fn-error">I will carry the error for first name</label>
-				</div>
-	
-				<div class="mb-3" name="lastNameDiv">
-					<label for="lastname" class="form-label required">Last Name</label>
-					<input type="text" class="form-control" id="lastname" name="lastname">
-					<label class="text-danger form-text error-label ln-error">I will carry the error for last name</label>
-				</div>
-	
-				<div class="mb-3">
-					<label for="exampleInputEmail1" class="form-label required">Email address</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
-					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-				</div>
-				<div class="mb-3">
-					<label for="password" class="form-label required">Password</label>
-					<input type="password" class="form-control" id="password" name="password">
-					<label class="text-danger form-text error-label pswd-error">I will carry the error for password</label>
-				</div>
-	
-				<div class="mb-3">
-					<label for="password2" class="form-label required">Password Confirmation</label>
-					<input type="password" class="form-control" id="password2" name="passwordconfirm">
-					<label class="text-danger form-text error-label pswdConfirm-error">I will carry the error for PasswordConfiramtion</label>
-				</div>
-	
-				<button type="submit" class="btn button-primary w-100 my-3" onclick="handleButtonClick(event)">Create an account</button>
-			</form>
-		</main>
+    <div class="mb-3">
+      <label for="password2" class="form-label required"
+        >Password Confirmation</label
+      >
+      <input
+        type="password"
+        class="form-control"
+        id="password2"
+        name="passwordconfirm"
+      />
+      <label class="text-danger form-text error-label pswdConfirm-error"
+        >I will carry the error for PasswordConfiramtion</label
+      >
+    </div>
+
+    <button
+      type="submit"
+      class="btn button-primary w-100 my-3"
+      onclick="handleButtonClick(event)"
+    >
+      Create an account
+    </button>
+  </form>
+</main>
+<script src="/javascript/signupValidation.js"></script>
