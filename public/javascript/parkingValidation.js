@@ -8,7 +8,7 @@ const generalComp = /^[a-zA-Z]{3,}$/;
 
 const carType = document.register.cartype;
 // Function to determine error message
-const errorMessageProducer = (value, secondErrorMessage) => {
+const errMessageProducer = (value, secondErrorMessage) => {
 	let errorMessage = ""
 	if (value == "") {
 		errorMessage = "Field should not be empty"
@@ -23,7 +23,7 @@ const validateName = () => {
 	const errorLabel = document.querySelector(".dn-error");
 
 	if(!(driverName.value.match(nameComp))) {
-		errorLabel.textContent = errorMessageProducer(driverName.value, "This field requires 2 names, each name should start with a capital letter, should be seperated by a space, and should not be more than 20 letters");
+		errorLabel.textContent = errMessageProducer(driverName.value, "This field requires 2 names, each name should start with a capital letter, should be seperated by a space, and should not be more than 20 letters");
 		driverName.classList.add('shadow-none');
 		driverName.style.borderColor = 'red';
 		driverName.focus();
@@ -42,7 +42,7 @@ const validatePhone = () => {
 	const errorLabel = document.querySelector(".tel-error");
 
 	if(!(phone.value.match(newPhoneComp))) {
-		errorLabel.textContent = errorMessageProducer(phone.value, "Phone number should start with 0 and should be a valid Ugandan number");
+		errorLabel.textContent = errMessageProducer(phone.value, "Phone number should start with 0 and should be a valid Ugandan number");
 		phone.classList.add('shadow-none');
 		phone.style.borderColor = 'red';
 		phone.focus();
@@ -79,7 +79,7 @@ const validateNin = () => {
 	const errorLabel = document.querySelector(".nin-error");
 
 	if(!(driverNin.value.match(ninComp))) {
-		errorLabel.textContent = errorMessageProducer(driverNin.value, "Enter a valid nin and should be 14 characters long");
+		errorLabel.textContent = errMessageProducer(driverNin.value, "Enter a valid nin and should be 14 characters long");
 		driverNin.classList.add('shadow-none');
 		driverNin.style.borderColor = 'red';
 		driverNin.focus();
@@ -98,7 +98,7 @@ const validateNumberPlate = () => {
 	const errorLabel = document.querySelector(".plate-error");
 
 	if(!(plate.value.match(plateComp))) {
-		errorLabel.textContent = errorMessageProducer(plate.value, "Number plate should start with the letter U, and should be a valid Ugandan number plate e.g UBL222C");
+		errorLabel.textContent = errMessageProducer(plate.value, "Number plate should start with the letter U, and should be a valid Ugandan number plate e.g UBL222C");
 		plate.classList.add('shadow-none');
 		plate.style.borderColor = 'red';
 		plate.focus();
@@ -117,7 +117,7 @@ const validateCarModel = () => {
 	const errorLabel = document.querySelector(".model-error");
 
 	if(!(carModel.value.match(generalComp))) {
-		errorLabel.textContent = errorMessageProducer(carModel.value, "Car model should be atleast 3 characters");
+		errorLabel.textContent = errMessageProducer(carModel.value, "Car model should be atleast 3 characters");
 		carModel.classList.add('shadow-none');
 		carModel.style.borderColor = 'red';
 		carModel.focus();
@@ -136,7 +136,7 @@ const validateColor = () => {
 	const errorLabel = document.querySelector(".color-error");
 
 	if(!(carColor.value.match(generalComp))) {
-		errorLabel.textContent = errorMessageProducer(carColor.value, "Color should be atleast 3 characters");
+		errorLabel.textContent = errMessageProducer(carColor.value, "Color should be atleast 3 characters");
 		carColor.classList.add('shadow-none');
 		carColor.style.borderColor = 'red';
 		carColor.focus();
