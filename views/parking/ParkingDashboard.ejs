@@ -54,42 +54,27 @@
               <table class="table table-striped table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Driver Name</th>
+                    <th scope="col">Car Type</th>
+                    <th scope="col">Number Plate</th>
+                    <th scope="col">Parking Option</th>
+										<th scope="col">Parking Date</th>
+										<th scope="col">Total Cost</th>
+										<th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <!-- <tr>
-										<th scope="row">2</th>
-										<td>Jacob</td>
-										<td>Thornton</td>
-										<td>@fat</td>
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td colspan="2">Larry the Bird</td>
-										<td>@twitter</td>
-									</tr>
-									<tr>
-										<th scope="row">1</th>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
-									</tr>
-									<tr>
-										<th scope="row">1</th>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
-									</tr> -->
+									<% data.forEach( car => { %>
+										<tr>
+											<td> <%= car.drivername %> </td>
+											<td> <%= car.cartype %> </td>
+											<td> <%= car.numberplate %> </td>
+											<td> <%= car.parkingoption %> </td>
+											<td> <%= car.arrivaldate %> </td>
+											<td> <%= car.totalcost %> </td>
+											<td> <a href=<%= `/edit/${car.id}`%>>edit</a> | <a href="#">delete</a> </td>
+										</tr>
+									<% } ) %>
                 </tbody>
               </table>
             </div>
@@ -142,4 +127,5 @@
       <%- include("../partials/ParkingForm.ejs") %> <%-
       include("../partials/signoff.ejs") %>
     </section>
-
+		<script src="/javascript/parkingPrice.js"></script>
+    <script src="/javascript/parkingValidation.js"></script>

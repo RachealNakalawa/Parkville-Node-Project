@@ -46,7 +46,7 @@ for(let i = 0; i < radios.length; i += 1) {
 	radios[i].addEventListener('change', () => {
 		if(selectedCarType.value != "default") {
 			if (radios[i].checked) {
-				calculatedPrice = parkingPriceFinder(radios[i].id, selectedCarType.value)
+				calculatedPrice = parkingPriceFinder(radios[i].value, selectedCarType.value)
 				totalCostInput.value = calculatedPrice;
 			}
 		}else {
