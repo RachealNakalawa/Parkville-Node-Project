@@ -3,6 +3,9 @@ const path = require('path');
 const morgan = require('morgan');
 const expressLayouts = require('express-layout');
 
+const authRoutes = require('./routes/authRoutes');
+const parkingRoutes = require('./routes/parkingRoutes');
+
 //instantiating
 const app = express();
 const portNumber = 3000
@@ -15,36 +18,20 @@ app.set("views", path.join(__dirname, "/views"));
 app.set("layouts", path.join(__dirname, "/views/layouts"));
 
 
+//middleware
 //setting directory for static files
 app.use(express.static(path.join(__dirname, "public")));
 app.use(morgan('dev'));
 app.use(expressLayouts());
-
-//middleware
+app.use(express.urlencoded({extended: true}));
 
 // routing
 
-app.get('/', (req, res) => {
-	res.render('authenticationForms/login')
-})
+//authRoutes
+app.use('/', authRoutes);
 
-app.get("/login", (req, res) => {
-	res.redirect('/');
-})
-
-app.get("/signup", (req, res) => {
-	//just to prove that you are simply calling a file
-	res.render('authenticationForms/signup.ejs');
-})
-
-app.get('/home', (req, res) => {
-	res.render('Home')
-})
-
-app.get('/parkings', (req, res)=> {
-	res.render('parking/ParkingDashboard')
-})
-
+//parkingRoutes
+app.use('/', parkingRoutes);
 
 // 404
 
