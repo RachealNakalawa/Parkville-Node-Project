@@ -1,0 +1,195 @@
+<section
+  class="align-items-center justify-content-center w-100 edit-p-form-section"
+>
+  <div class="form-div">
+    <form
+      class="p-3 mt-0 auth-form bg-light"
+      action="/edit"
+      target=""
+      method="POST"
+      name="edit"
+    >
+      <h4 class="text-center">Edit a Car</h4>
+
+      <div class="mb-3">
+        <input
+          type="text"
+          placeholder="Driver's Name"
+          class="form-control"
+          id="driverId"
+          name="drivername"
+					value=<%= requestedCar.drivername %>
+          aria-describedby="emailHelp"
+        />
+        <label class="text-danger form-text dn-error"></label>
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          class="form-control"
+          id="phonenumber"
+          name="telephone"
+					value=<%= requestedCar.telephone %>
+        />
+        <label class="text-danger form-text tel-error"></label>
+      </div>
+
+      <div class="mb-3">
+        <select
+          class="form-select"
+          name="cartype"
+          aria-label="Default select example"
+          onchange="selectChanger()"
+					value=<%= requestedCar.cartype %>
+        >
+          <option value="default" >Select car type</option>
+          <option value="truck" <%= requestedCar.cartype === 'truck' ? "selected" : "" %> >Truck</option>
+          <option value="personalCar" <%= requestedCar.cartype === 'personalCar' ? "selected" : "" %>>Personal Car</option>
+          <option value="taxi" <%= requestedCar.cartype === 'personalCar' ? "selected" : "" %>>Taxi</option>
+          <option value="coaster" <%= requestedCar.cartype === 'coaster' ? "selected" : "" %>>Coaster</option>
+          <option value="bodaboda" <%= requestedCar.cartype === 'bodaboda' ? "selected" : "" %>>Boda boda</option>
+        </select>
+        <label class="text-danger form-text cartype-error"></label>
+      </div>
+
+      <div class="mb-3 driverNin" style="display: none">
+        <input
+          type="text"
+          placeholder="NIN"
+          class="form-control"
+          id="drivernin"
+          name="drivernin"
+					value=<%= requestedCar.drivernin %>
+        />
+        <label class="text-danger form-text nin-error"></label>
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="text"
+          placeholder="Number plate"
+          class="form-control"
+          id="numberplate"
+          name="numberplate"
+					value=<%= requestedCar.numberplate %>
+        />
+        <label class="text-danger form-text plate-error"></label>
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="text"
+          placeholder="Car Model"
+          class="form-control"
+          id="carmodel"
+          name="carmodel"
+          aria-describedby="help"
+					value=<%= requestedCar.carmodel %>
+        />
+        <label class="text-danger form-text model-error"></label>
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="text"
+          placeholder="color"
+          name="color"
+          class="form-control"
+          id="color"
+          aria-describedby="help"
+					value=<%= requestedCar.color %>
+        />
+        <label class="text-danger form-text color-error"></label>
+      </div>
+
+      <div class="mb-1 d-flex align-items-center">
+        <label for="arrivaltime" class="form-label me-4">Time of Arrival</label>
+        <input
+          type="time"
+          placeholder="Time of arrival"
+          name="arrivaltime"
+          class="form-control w-50"
+          id="arrivaltime"
+					value=<%= requestedCar.arrivaltime %>
+        />
+      </div>
+      <label class="text-danger mb-3 form-text time-error"></label>
+
+      <div class="mb-1 d-flex align-items-center">
+        <label for="arrivaldate" class="form-label me-4">Date of Arrival</label>
+        <input
+          type="date"
+          placeholder="Date of arrival"
+          name="arrivaldate"
+          class="form-control w-50"
+          id="arrivaldate"
+					value=<%= requestedCar.arrivaldate %>
+        />
+      </div>
+      <label class="text-danger mb-3 form-text date-error"></label>
+
+      <h6>Choice of parking</h6>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="parkingoption"
+          value="day"
+          id="day"
+					<%= requestedCar.parkingoption === "day" ? "checked" : "" %>
+        />
+        <label class="form-check-label" for="day"> Day </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="parkingoption"
+          value="night"
+          id="night"
+					<%= requestedCar.parkingoption === "night" ? "checked" : "" %>
+        />
+        <label class="form-check-label" for="night"> Night </label>
+      </div>
+      <div class="form-check mb-1">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="parkingoption"
+          value="lessthanthree"
+          id="lessthanthree"
+					<%= requestedCar.parkingoption === "lessthanthree" ? "checked" : "" %>
+        />
+        <label class="form-check-label" for="lessthanthree">
+          Less than 3 hours
+        </label>
+      </div>
+      <label class="text-danger form-text mb-3 radio-error"></label>
+
+      <div class="mb-3">
+        <input
+          type="text"
+          placeholder="0"
+          class="form-control"
+          id="parkingCost"
+          name="totalcost"
+          aria-describedby="help"
+          value=<%= requestedCar.totalcost %>
+          readonly
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn button-primary w-100"
+        onclick="validateRegister(event)"
+      >
+        Save
+      </button>
+    </form>
+
+    <a href="/parkings" class="btn my-3 btn-light cancel-button"> Cancel </a>
+  </div>
+</section>
