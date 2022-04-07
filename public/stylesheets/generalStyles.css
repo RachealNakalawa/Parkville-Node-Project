@@ -35,6 +35,12 @@ legend {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+.edit-p-form-section {
+	display: flex;
+	min-height: 100vh;
+	max-height: 100vh;
+}
+
 .form-div,
 .form-div > form {
 	max-height: 80vh;
@@ -61,4 +67,8 @@ legend {
 	position: absolute;
 	top: -10%;
 	left: 105%;
+}
+
+table {
+	font-size: 12px;
 }

@@ -9,6 +9,10 @@
 	background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../images/parkbackground2.jpg");
 }
 
+.edit-p-form-section {
+	background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/parkbackground2.jpg");
+}
+
 .dept-card-div-1 {
 	background: url("../images/car_parking.jpg");
 }
@@ -22,6 +26,7 @@
 }
 
 .home-section,
+.edit-p-form-section,
 .dept-card-div-1,
 .dept-card-div-2,
 .dept-card-div-3 {
