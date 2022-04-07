@@ -21,9 +21,9 @@
 		
 		<%- body %>
 
-		<script src="../../javascript/signupValidation.js"></script>
-		<script src="../../javascript/parkingPrice.js"></script>
-    <script src="../../javascript/parkingValidation.js"></script>
+		<script src="/javascript/parkingPrice.js"></script>
+    <script src="/javascript/parkingValidation.js"></script>
+		<script src="/javascript/signupValidation.js"></script>
     <script
       src="https://kit.fontawesome.com/ad0c4e912f.js"
       crossorigin="anonymous"
@@ -58,6 +58,7 @@
           popupElement.style.display = "flex";
         } else {
           popupElement.style.display = "none";
+					// window.location.href = window.location.href;
           document[formName].reset();
         }
       };
