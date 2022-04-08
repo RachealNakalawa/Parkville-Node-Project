@@ -18,7 +18,7 @@
           class="form-control"
           id="driverId"
           name="drivername"
-					value=<%= requestedCar.drivername %>
+					value="<%= requestedCar.drivername %>"
           aria-describedby="emailHelp"
         />
         <label class="text-danger form-text dn-error"></label>
@@ -31,7 +31,7 @@
           class="form-control"
           id="phonenumber"
           name="telephone"
-					value=<%= requestedCar.telephone %>
+					value="<%= requestedCar.telephone %>"
         />
         <label class="text-danger form-text tel-error"></label>
       </div>
@@ -42,7 +42,7 @@
           name="cartype"
           aria-label="Default select example"
           onchange="selectChanger()"
-					value=<%= requestedCar.cartype %>
+					value="<%= requestedCar.cartype %>"
         >
           <option value="default" >Select car type</option>
           <option value="truck" <%= requestedCar.cartype === 'truck' ? "selected" : "" %> >Truck</option>
@@ -61,7 +61,7 @@
           class="form-control"
           id="drivernin"
           name="drivernin"
-					value=<%= requestedCar.drivernin %>
+					value="<%= requestedCar.drivernin %>"
         />
         <label class="text-danger form-text nin-error"></label>
       </div>
@@ -73,7 +73,7 @@
           class="form-control"
           id="numberplate"
           name="numberplate"
-					value=<%= requestedCar.numberplate %>
+					value="<%= requestedCar.numberplate %>"
         />
         <label class="text-danger form-text plate-error"></label>
       </div>
@@ -86,7 +86,7 @@
           id="carmodel"
           name="carmodel"
           aria-describedby="help"
-					value=<%= requestedCar.carmodel %>
+					value="<%= requestedCar.carmodel %>"
         />
         <label class="text-danger form-text model-error"></label>
       </div>
@@ -99,7 +99,7 @@
           class="form-control"
           id="color"
           aria-describedby="help"
-					value=<%= requestedCar.color %>
+					value="<%= requestedCar.color %>"
         />
         <label class="text-danger form-text color-error"></label>
       </div>
@@ -112,7 +112,7 @@
           name="arrivaltime"
           class="form-control w-50"
           id="arrivaltime"
-					value=<%= requestedCar.arrivaltime %>
+					value="<%= requestedCar.arrivaltime %>"
         />
       </div>
       <label class="text-danger mb-3 form-text time-error"></label>
@@ -125,7 +125,7 @@
           name="arrivaldate"
           class="form-control w-50"
           id="arrivaldate"
-					value=<%= requestedCar.arrivaldate %>
+					value="<%= requestedCar.arrivaldate %>"
         />
       </div>
       <label class="text-danger mb-3 form-text date-error"></label>
@@ -176,7 +176,7 @@
           id="parkingCost"
           name="totalcost"
           aria-describedby="help"
-          value=<%= requestedCar.totalcost %>
+          value="<%= requestedCar.totalcost %>"
           readonly
         />
       </div>

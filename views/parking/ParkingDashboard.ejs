@@ -72,7 +72,7 @@
 											<td> <%= car.parkingoption %> </td>
 											<td> <%= car.arrivaldate %> </td>
 											<td> <%= car.totalcost %> </td>
-											<td> <a href=<%= `/edit/${car.id}`%>>edit</a> | <a href="#">delete</a> </td>
+											<td> <a href="/edit/<%= car.id %>">edit</a> | <a href="#">delete</a> </td>
 										</tr>
 									<% } ) %>
                 </tbody>
