@@ -4,10 +4,10 @@
   <div class="form-div">
     <form
       class="p-3 mt-0 auth-form bg-light"
-      action="/edit"
+      action="/edit?id=<%= requestedCar.id %>"
       target=""
       method="POST"
-      name="edit"
+      name="register"
     >
       <h4 class="text-center">Edit a Car</h4>
 
@@ -193,3 +193,5 @@
     <a href="/parkings" class="btn my-3 btn-light cancel-button"> Cancel </a>
   </div>
 </section>
+<script src="/javascript/parkingPrice.js"></script>
+<script src="/javascript/parkingValidation.js"></script>
