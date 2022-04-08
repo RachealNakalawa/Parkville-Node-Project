@@ -2,9 +2,22 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const expressLayouts = require('express-layout');
+const mongoose =  require('mongoose');
+
 
 const authRoutes = require('./routes/authRoutes');
 const parkingRoutes = require('./routes/parkingRoutes');
+const config = require('./config/database_config');
+
+//connecting to the database
+mongoose.connect(config.database);
+const db = mongoose.connection;
+db.once('open',() =>{
+	console.log('You are connected to mongodb')
+});
+db.on('error',(err) => {
+	console.error(`connection error: ${err.message}`)
+});
 
 //instantiating
 const app = express();
