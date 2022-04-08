@@ -3,6 +3,7 @@ const path = require('path');
 const morgan = require('morgan');
 const expressLayouts = require('express-layout');
 const mongoose =  require('mongoose');
+const methodoverride = require('method-override');
 
 
 const authRoutes = require('./routes/authRoutes');
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(morgan('dev'));
 app.use(expressLayouts());
 app.use(express.urlencoded({extended: true}));
+app.use(methodoverride('_method'));
 
 // routing
 
