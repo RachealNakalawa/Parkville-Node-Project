@@ -50,7 +50,8 @@ const parkingSchema = mongoose.Schema({
   recieptnumber: {
 		type: String,
 		required: true,
-		unique: true
+		unique: true,
+		trim: true
 	},
   signoffstatus: {
 		type: String,
@@ -62,6 +63,26 @@ const parkingSchema = mongoose.Schema({
 		default: ''
 	},
   signofftime: {
+		type: String,
+		required: false,
+		default: ''
+	},
+	takertelephone: {
+		type: String,
+		required: false,
+		default: ''
+	},
+	signoffdate: {
+		type: String,
+		required: false,
+		default: ''
+	},
+	genderoption: {
+		type: String,
+		required: false,
+		default: ''
+	},
+	takernin: {
 		type: String,
 		required: false,
 		default: ''
