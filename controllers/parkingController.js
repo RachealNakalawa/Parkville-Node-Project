@@ -38,25 +38,31 @@ const registerCar = async(req, res) => {
 	}
 }
 
-const editCarForm = (req, res) => {
+
+//Editing a car
+const editCarForm = async(req, res) => {
 	console.log(req.params.id);
-	console.log(req.query);
 	let requestedCar = null
 
-	for(car of parkedCars){
-		if(car.id == req.params.id) {
-			requestedCar = {...car};
-			break;
-		}
+	try {
+
+		requestedCar = await Parking.findById(req.params.id)
+		console.log(requestedCar);
+		res.render('parking/editParking', {requestedCar});
+
+	}catch (err) {
+		console.error(err);
 	}
-	console.log(requestedCar);
-	res.render('parking/editParking', {requestedCar});
 }
 
-const editParkedCar = (req, res) => {
-	console.log(req.query)
-	console.log("The query id is ", req.query.id)
-	res.redirect('/parkings');
+const editParkedCar = async(req, res) => {
+	
+	try {
+		await Parking.findByIdAndUpdate(req.query.id, req.body);
+		res.redirect('/parkings');
+	}catch(err) {
+		console.error(err);
+	}
 }
 
 module.exports = {
