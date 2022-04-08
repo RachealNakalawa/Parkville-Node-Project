@@ -43,8 +43,9 @@ const registerCar = (req, res) => {
 	res.redirect('/parkings')
 }
 
-const editParkedCar = (req, res) => {
+const editCarForm = (req, res) => {
 	console.log(req.params.id);
+	console.log(req.query);
 	let requestedCar = null
 
 	for(car of parkedCars){
@@ -57,9 +58,16 @@ const editParkedCar = (req, res) => {
 	res.render('parking/editParking', {requestedCar});
 }
 
+const editParkedCar = (req, res) => {
+	console.log(req.query)
+	console.log("The query id is ", req.query.id)
+	res.redirect('/parkings');
+}
+
 module.exports = {
 	homePage,
 	parkingDashboard,
 	registerCar,
-	editParkedCar
+	editCarForm,
+	editParkedCar,
 }
