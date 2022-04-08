@@ -1,46 +1,41 @@
-const parkedCars = [{
-	id: "1",
-  drivername: 'Racheal Nakalawa',
-  telephone: '0774176973',
-  cartype: 'coaster',
-  drivernin: '',
-  numberplate: 'UBL947C',
-  carmodel: 'Subaru',
-  color: 'black',
-  arrivaltime: '16:24',
-  arrivaldate: '2022-04-07',
-  parkingoption: 'night',
-  totalcost: '3000',
-  recieptnumber: 'l1ozcbrp',
-  signoffstatus: 'open',
-  takername: '',
-  signofftime: ''
-}]
+const Parking = require('../models/parkingModel');
 
-// const parkedCars = []
-
+const parkedCars = [];
 
 const homePage = (req, res) => {
 	res.render('Home');
 }
 
-const parkingDashboard = (req, res)=> {
+
+//Fetch all parked cars
+const parkingDashboard = async (req, res)=> {
 	// respond with the file, and the variables available to it (the object keys)
-	res.render('parking/ParkingDashboard', {data: parkedCars})
+	try {
+		let parkedCars =  await Parking.find({}).sort({createdAt: -1});
+		console.log(parkedCars)
+		res.render('parking/ParkingDashboard', {data: parkedCars})
+	}catch (err){	
+		console.error(err);
+	}
 }
 
-const registerCar = (req, res) => {
 
+//Park a car
+const registerCar = async(req, res) => {
 
-	let recieptnumber = Date.now().toString(36);
-	let signoffstatus = 'open'
-	let takername = ""
-	let signofftime = ""
+	try {
+		let recieptnumber = Date.now().toString(36);
+		let storedCar = {...req.body, recieptnumber};
 
-	let car = {...req.body, recieptnumber, signoffstatus, takername, signofftime }
-	console.log(car);
-	parkedCars.push(car);
-	res.redirect('/parkings')
+		let car = new Parking(storedCar);
+
+		await car.save();
+
+		console.log("Your data has been successfully saved to database")
+		res.redirect('/parkings');
+	}catch (err) {
+		console.error(err);
+	}
 }
 
 const editCarForm = (req, res) => {
