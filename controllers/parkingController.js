@@ -1,4 +1,5 @@
 const Parking = require('../models/parkingModel');
+const router = require('../routes/authRoutes');
 
 const parkedCars = [];
 
@@ -65,10 +66,42 @@ const editParkedCar = async(req, res) => {
 	}
 }
 
+//sign off a car
+const signOffCar = async(req, res) => {
+
+	//something to improve is to think of handling an error in receipt number entry, and making sure that you can only sign off cars with signoffstatus open.
+
+	console.log("You have reached the signoff");
+	let leavingCar = {...req.body, signoffstatus: 'closed'};
+	try {
+		await Parking.findOneAndUpdate({recieptnumber: req.body.recieptnumber.trim()}, leavingCar);
+
+		res.redirect('/parkings');
+	}catch(err) {
+		console.error(err);
+	}
+}
+
+
+//delete car
+
+const deleteCar = async(req, res) => {
+	try{
+		await Parking.findByIdAndDelete(req.params.id);
+
+		res.redirect('/parkings');
+	}catch(err) {
+		console.error(err);
+	}
+}
+
+
 module.exports = {
 	homePage,
 	parkingDashboard,
 	registerCar,
 	editCarForm,
 	editParkedCar,
+	signOffCar,
+	deleteCar
 }

@@ -75,3 +75,13 @@ legend {
 table {
 	font-size: 12px;
 }
+
+.delete-car-form {
+	display: inline;
+}
+
+.delete-car-form > button {
+	border: none;
+	outline: none;
+	background-color: transparent;
+}

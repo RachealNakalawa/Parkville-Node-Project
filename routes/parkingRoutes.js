@@ -10,5 +10,7 @@ router.get('/parkings', parkingController.parkingDashboard)
 router.post('/parkings', parkingController.registerCar)
 router.get('/edit/:id', parkingController.editCarForm);
 router.post('/edit', parkingController.editParkedCar);
+router.post('/signoffcar', parkingController.signOffCar);
+router.delete('/deletecar/:id', parkingController.deleteCar);
 
 module.exports = router;
