@@ -6,6 +6,7 @@ const mongoose =  require('mongoose');
 const methodoverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
+const connectEnsureLoggedIn = require('connect-ensure-login');
 
 
 const authRoutes = require('./routes/authRoutes');
@@ -66,7 +67,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/', authRoutes);
 
 //parkingRoutes
-app.use('/', parkingRoutes);
+app.use('/', connectEnsureLoggedIn.ensureLoggedIn("/login"), parkingRoutes);
 
 // 404
 
