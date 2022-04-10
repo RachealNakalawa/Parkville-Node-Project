@@ -75,9 +75,11 @@
 											<td> <%= car.arrivaldate %> </td>
 											<td> <%= car.signoffstatus %> </td>
 											<td> 
-												<a href="/edit/<%= car.id %>">edit</a> | 
+												<a href="/edit/<%= car.id %>" class="me-1"><i class="fa fa-pencil" aria-hidden="true"></i>
+												</a> | 
 												<form action="/deletecar/<%= car.id %>?_method=DELETE" method="POST" class="delete-car-form">
-													<button type="submit" class="text-danger">delete</button>
+													<button type="submit" class="text-danger ms-1"><i class="fa fa-trash" aria-hidden="true"></i>
+													</button>
 												</form>
 											</td>
 										</tr>
