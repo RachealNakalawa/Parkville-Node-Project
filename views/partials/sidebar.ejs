@@ -49,10 +49,12 @@ style="width: 250px"
 		</a>
 	</li>
 	<li>
-		<a href="#" class="nav-link text-white">
-			<i class="fa fa-sign-out" aria-hidden="true"></i>
-			<span class="ms-2">Logout</span>
-		</a>
+		<form action="/logout?_method=DELETE" method="POST">
+			<button type="submit" class="nav-link text-white">
+				<i class="fa fa-sign-out" aria-hidden="true"></i>
+				<span class="ms-2">Logout</span>
+			</button>
+		</form>
 	</li>
 </ul>
 

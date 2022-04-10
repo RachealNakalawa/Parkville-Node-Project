@@ -48,4 +48,12 @@ router.post("/signup", connectEnsureLoggedIn.ensureLoggedOut('/home'),async (req
 	}
 })
 
+
+// logout a user
+
+router.delete('/logout', (req, res) => {
+	req.logOut();
+	res.redirect("/");
+})
+
 module.exports = router;
