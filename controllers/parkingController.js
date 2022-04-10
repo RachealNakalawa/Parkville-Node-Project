@@ -1,8 +1,6 @@
 const Parking = require('../models/parkingModel');
 const router = require('../routes/authRoutes');
 
-const parkedCars = [];
-
 const homePage = (req, res) => {
 	res.render('Home');
 }
@@ -27,7 +25,7 @@ const registerCar = async(req, res) => {
 	try {
 		let recieptnumber = Date.now().toString(36);
 		let storedCar = {...req.body, recieptnumber};
-
+		
 		let car = new Parking(storedCar);
 
 		await car.save();
