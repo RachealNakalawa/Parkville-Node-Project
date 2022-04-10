@@ -2,7 +2,7 @@ const Parking = require('../models/parkingModel');
 const router = require('../routes/authRoutes');
 
 const homePage = (req, res) => {
-	res.render('Home');
+	res.render('Home', {name: req.user.firstname});
 }
 
 
@@ -12,7 +12,7 @@ const parkingDashboard = async (req, res)=> {
 	try {
 		let parkedCars =  await Parking.find({}).sort({createdAt: -1});
 		console.log(parkedCars)
-		res.render('parking/ParkingDashboard', {data: parkedCars})
+		res.render('parking/ParkingDashboard', {data: parkedCars, name: req.user.firstname})
 	}catch (err){	
 		console.error(err);
 	}
