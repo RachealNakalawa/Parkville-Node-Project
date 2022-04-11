@@ -1,5 +1,5 @@
-const someFunc = () => {
-	let windowLoc = window.location.href;
+const sideBarNavigator = () => {
+	let windowLoc = window.location.pathname
 	
 	windowLoc = windowLoc.split('/');
 	console.log(windowLoc)
@@ -11,4 +11,4 @@ const someFunc = () => {
 	}
 }
 
-window.addEventListener('load', someFunc);
+window.addEventListener('load', sideBarNavigator);
