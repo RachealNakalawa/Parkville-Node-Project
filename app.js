@@ -71,7 +71,7 @@ app.use('/', authRoutes);
 
 //about
 app.get('/about', connectEnsureLoggedIn.ensureLoggedIn("/login"), (req, res) => {
-	res.render('About');
+	res.render('About', {name: req.user.firstname});
 })
 
 //parkingRoutes
