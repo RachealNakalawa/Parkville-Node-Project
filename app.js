@@ -68,6 +68,11 @@ passport.deserializeUser(User.deserializeUser());
 //authRoutes
 app.use('/', authRoutes);
 
+//about
+app.get('/about', connectEnsureLoggedIn.ensureLoggedIn("/login"), (req, res) => {
+	res.render('About');
+})
+
 //parkingRoutes
 app.use('/', connectEnsureLoggedIn.ensureLoggedIn("/login"), parkingRoutes);
 

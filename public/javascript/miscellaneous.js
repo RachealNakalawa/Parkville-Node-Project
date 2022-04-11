@@ -6,7 +6,9 @@ const sideBarNavigator = () => {
 	
 	if (windowLoc.includes('parkings')) {
 		document.querySelector('.dept-side-link').classList.add('active');
-	}else {
+	} else if (windowLoc.includes('about')) {
+		document.querySelector('.about-side-link').classList.add('active');
+	} else {
 		document.querySelector('.home-side-link').classList.add('active');
 	}
 }
