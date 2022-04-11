@@ -8,6 +8,7 @@ const session = require('express-session');
 const passport = require('passport');
 const connectEnsureLoggedIn = require('connect-ensure-login');
 const flash = require('express-flash');
+require('dotenv').config();
 
 
 const authRoutes = require('./routes/authRoutes');
@@ -46,7 +47,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(methodoverride('_method'));
 app.use(flash())
 app.use(session({
-	secret: 'rashiyeParkville',
+	secret: process.env.SESSION_SECRET,
 	resave: false,
 	saveUninitialized: false,
 	// cookie: {maxAge: 60 * 60 * 1000}
