@@ -36,6 +36,13 @@
     </div>
   </nav>
 
+	<% if(messages.error) { %>
+		<div class="alert alert-danger alert-dismissible fade show form-flash-alert" role="alert">
+			<small><%= messages.error %></small>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	<% } %>
+
   <form
     class="border p-3 auth-form mx-3 bg-white"
     action="/signup"

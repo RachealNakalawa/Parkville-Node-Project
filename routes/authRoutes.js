@@ -3,6 +3,7 @@ const User = require('../models/userModel');
 const router = express.Router();
 const passport = require('passport');
 const connectEnsureLoggedIn = require('connect-ensure-login');
+const flash = require('express-flash');
 
 
 // login a user
@@ -18,7 +19,9 @@ router.get("/login", connectEnsureLoggedIn.ensureLoggedOut('/home'), (req, res) 
 // passport provides the controller to handle loging in. So it will authenticate using the strategy it takes in, and respond or react based on the options it takes in as well. 
 router.post('/login',connectEnsureLoggedIn.ensureLoggedOut('/home'),  passport.authenticate('local', {
 	failureRedirect: "/",
-	successRedirect: '/home'
+	failureFlash: true,
+	failureMessage: "Email or Password incorrect",
+	successRedirect: '/home',
 }))
 
 
@@ -32,12 +35,13 @@ router.post("/signup", connectEnsureLoggedIn.ensureLoggedOut('/home'),async (req
 	try {
 		let userExistance = await User.findOne({email: req.body.email});
 		if(userExistance) {
-			res.send("Email already exists");
+			req.flash("error", "Email already exists");
+			res.render('authenticationForms/signup.ejs');
 		}else {
 			let newUser = new User(req.body);
 			await User.register(newUser, req.body.password, (err) => {
 				if(err) {
-					res.send('We could create a user, Please try again later');
+					throw err;
 				}else{
 					res.redirect('/');
 				}
@@ -45,6 +49,8 @@ router.post("/signup", connectEnsureLoggedIn.ensureLoggedOut('/home'),async (req
 		}
 	}catch(err) {
 		console.error(err)
+		req.flash("error", "Failed to create user, please try again later");
+		res.render('authenticationForms/signup.ejs');
 	}
 })
 

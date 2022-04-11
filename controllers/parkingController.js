@@ -1,5 +1,6 @@
 const Parking = require('../models/parkingModel');
 const router = require('../routes/authRoutes');
+const flash = require('express-flash');
 
 const homePage = (req, res) => {
 	res.render('Home', {name: req.user.firstname});
@@ -31,6 +32,7 @@ const registerCar = async(req, res) => {
 		await car.save();
 
 		console.log("Your data has been successfully saved to database")
+		req.flash('success', "Car parked Successfully!");
 		res.redirect('/parkings');
 	}catch (err) {
 		console.error(err);
@@ -87,9 +89,12 @@ const deleteCar = async(req, res) => {
 	try{
 		await Parking.findByIdAndDelete(req.params.id);
 
+		req.flash("success", "Car deleted succesfully!")
 		res.redirect('/parkings');
 	}catch(err) {
 		console.error(err);
+		req.flash("error", "Failed to delete car!")
+		res.redirect('/parkings');
 	}
 }
 

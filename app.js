@@ -7,6 +7,7 @@ const methodoverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
 const connectEnsureLoggedIn = require('connect-ensure-login');
+const flash = require('express-flash');
 
 
 const authRoutes = require('./routes/authRoutes');
@@ -43,6 +44,7 @@ app.use(morgan("dev"));
 app.use(expressLayouts());
 app.use(express.urlencoded({extended: true}));
 app.use(methodoverride('_method'));
+app.use(flash())
 app.use(session({
 	secret: 'rashiyeParkville',
 	resave: false,

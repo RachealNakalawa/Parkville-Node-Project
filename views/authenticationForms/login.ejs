@@ -7,6 +7,13 @@
           src="/images/parkville-logo1.png"
         />
 
+				<% if(messages.error) { %>
+					<div class="alert alert-danger alert-dismissible fade show form-flash-alert" role="alert">
+						<small><%= messages.error %></small>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+				<% } %>
+
         <form class="border p-3 bg-white w-100" action="/login" target="" method="POST">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"

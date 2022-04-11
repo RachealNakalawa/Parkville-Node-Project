@@ -2,6 +2,21 @@
     <section class="home-section d-flex">
       <%- include('../partials/sidebar.ejs')%>
 
+
+			<% if(messages.success) { %>
+				<div class="alert alert-success alert-dismissible fade show w-100" role="alert" style="position: fixed; z-index: 2; top: 0; left: 0;">
+					<small><%= messages.success %></small>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			<% } %>
+
+			<% if(messages.error) { %>
+				<div class="alert alert-danger alert-dismissible fade show w-100" role="alert" style="position: fixed; z-index: 2; top: 0; left: 0;">
+					<small><%= messages.error %></small>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			<% } %>
+
       <main class="w-100 dashboard-main">
         <!-- parking department nav bar -->
 
